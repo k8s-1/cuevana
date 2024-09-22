@@ -5,4 +5,6 @@ import (
 
 //#Deployment
 
+templates.nums
+
 test: "ok"
