@@ -7,4 +7,6 @@ import (
 
 something: templates.nums
 
+right: templates.#Deployment
+
 test: "ok"
