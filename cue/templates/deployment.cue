@@ -1,5 +1,9 @@
 package templates
 
+// use if guard to get even numbers in a list comprehension
+nums: [1, 2, 3, 4, 5, 6, 7, 8]
+sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
+
 #Deployment: {
   apiVersion: "apps/v1"
   kind:       "Deployment"
