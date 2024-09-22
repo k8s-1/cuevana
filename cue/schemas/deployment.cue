@@ -10,7 +10,6 @@ metadata: {
 spec: {
 	replicas: 1
 	selector: matchLabels: app: "app1"
-	strategy: {}
 	template: {
 		metadata: {
 			creationTimestamp: null
