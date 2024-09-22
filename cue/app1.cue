@@ -7,4 +7,5 @@ import (
 
 templates.nums
 
+wtf: 3
 //test: "ok"
