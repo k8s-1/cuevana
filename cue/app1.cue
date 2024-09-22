@@ -5,7 +5,6 @@ import (
 
 //#Deployment
 
-templates.nums
+something: templates.nums
 
-wtf: 3
-//test: "ok"
+test: "ok"
