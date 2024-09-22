@@ -7,4 +7,4 @@ import (
 
 templates.nums
 
-test: "ok"
+//test: "ok"
