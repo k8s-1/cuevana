@@ -1,4 +1,4 @@
-package schema
+package templates
 
 apiVersion: "apps/v1"
 kind:       "Deployment"
