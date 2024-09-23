@@ -21,7 +21,7 @@ import (
         labels: app: "app1"
       }
       spec: containers: [{
-        image: "app1:v0.0.1"
+        image: string
         name:  "app1"
         resources: {}
       }]
