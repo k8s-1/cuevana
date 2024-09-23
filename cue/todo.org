@@ -1,15 +1,25 @@
-* Find a way to... [20%]
+* Find a way to... [50%]
 - [X] inject environment-specific
-  variables: possible with -t TAG and
+  variables
+  ::: possible with -t TAG and
   @if(TAG) in .cue file
-- [ ] template a configuration
-- [ ] use values from an env-specific
+  
+- [X] template a configuration
+  ::: possible with having a #Definition and union (&) with
+  regularly defined values inside other package e.g. values
+  package -> see ./templates/deployment.cue
+  
+- [X] use values from an env-specific
   package to handle this config dynamically
+  ::: solved by above
+  
 - [ ] be able to configure an app to only
   be included in a specific environment
   e.g. metallb on baremetal clusters
+  
 - [ ] create multiple files
   from a single .cue
+  
 - [ ] store these files in
   an appropriate path
 
