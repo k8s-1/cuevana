@@ -4,14 +4,6 @@ import (
 	"github.com/k8s-1/cuevana/values"
 )
 
-// use if guard to get even numbers in a list comprehension
-nums: [1, 2, 3, 4, 5, 6, 7, 8]
-sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
-
-#def: string | int | *1
-
-#replicas: values.#env.replicas | *1
-
 #Deployment: {
   apiVersion: "apps/v1"
   kind:       "Deployment"
@@ -21,7 +13,7 @@ sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
     name: "app1"
   }
   spec: {
-    replicas: #replicas
+    replicas: 1
     selector: matchLabels: app: "app1"
     template: {
       metadata: {
