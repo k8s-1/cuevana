@@ -10,7 +10,7 @@ sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
 
 #def: string | int | *1
 
-#replicas: #env.replicas | *1
+#replicas: values.#env.replicas | *1
 
 #Deployment: {
   apiVersion: "apps/v1"
