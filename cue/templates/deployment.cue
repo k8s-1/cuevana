@@ -4,7 +4,6 @@ package templates
 nums: [1, 2, 3, 4, 5, 6, 7, 8]
 sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
 
-
 #def: string | int | *1
 
 #replicas: #env.replicas | *1
