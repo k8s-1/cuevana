@@ -4,6 +4,11 @@ package templates
 nums: [1, 2, 3, 4, 5, 6, 7, 8]
 sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
 
+
+#def: string | int | *1
+
+#replicas: #env.replicas | *1
+
 #Deployment: {
   apiVersion: "apps/v1"
   kind:       "Deployment"
@@ -13,7 +18,7 @@ sqrs: [ for n in nums if mod(n, 2) == 0 {n * n}]
     name: "app1"
   }
   spec: {
-    replicas: 1
+    replicas: #replicas
     selector: matchLabels: app: "app1"
     template: {
       metadata: {
