@@ -1,6 +1,6 @@
 @if(tst) // if -t <TAG>, import this file
 package values
 
-_#env: {
+env: {
   image: "tst-v0.0.2"
 }
