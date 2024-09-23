@@ -19,7 +19,8 @@
   https://cuetorials.com/first-steps/generate-configuration/
   -> simple: create a folder with only environment-specific .cue
 
-- [ ] add extra config files for a certain environment
+- [ ] add extra config files for a certain environment,
+  e.g. tools apps on tooling cluster
   
 - [ ] create multiple files
   from a single .cue
