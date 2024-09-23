@@ -20,7 +20,7 @@
   -> simple: create a folder with only environment-specific .cue
 
 - [ ] add extra config files for a certain environment,
-  e.g. tools apps on tooling cluster
+  e.g. tools apps on tools cluster
   
 - [ ] create multiple files
   from a single .cue
