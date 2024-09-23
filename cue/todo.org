@@ -18,6 +18,7 @@
   e.g. metallb on baremetal clusters
   https://cuetorials.com/first-steps/generate-configuration/
   -> simple: create a folder with only environment-specific .cue
+  -> is it possible to regex compare the tag? e.g. env=baremetal-dev-cluster
 
 - [ ] add extra config files for a certain environment,
   e.g. tools apps on tools cluster
