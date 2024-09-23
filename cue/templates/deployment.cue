@@ -4,7 +4,7 @@ import (
 	"github.com/k8s-1/cuevana/values"
 )
 
-#Deployment: {
+_#Deployment: {
   apiVersion: "apps/v1"
   kind:       "Deployment"
   metadata: {
@@ -29,7 +29,7 @@ import (
   }
 }
 
-Deployment: #Deployment & {
+Deployment: _#Deployment & {
   replicas: values._#env.replicas | *1
   image:    values._#env.image
 }
