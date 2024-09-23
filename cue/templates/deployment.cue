@@ -27,5 +27,4 @@ import (
       }]
     }
   }
-  status: {}
 }
