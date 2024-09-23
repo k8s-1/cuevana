@@ -4,7 +4,6 @@ import (
 	"github.com/k8s-1/cuevana/values"
 )
 
-
 #Deployment: {
     apiVersion: "apps/v1"
     kind:       "Deployment"
