@@ -1,0 +1,15 @@
+* Find a way to... [20%]
+- [X] inject environment-specific
+  variables: possible with -t TAG and
+  @if(TAG) in .cue file
+- [ ] template a configuration
+- [ ] use values from an env-specific
+  package to handle this config dynamically
+- [ ] be able to configure an app to only
+  be included in a specific environment
+  e.g. metallb on baremetal clusters
+- [ ] create multiple files
+  from a single .cue
+- [ ] store these files in
+  an appropriate path
+
