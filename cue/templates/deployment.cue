@@ -13,7 +13,7 @@ import (
     name: "app1"
   }
   spec: {
-    replicas: values._#env.replicas
+    replicas: int
     selector: matchLabels: app: "app1"
     template: {
       metadata: {
@@ -27,4 +27,9 @@ import (
       }]
     }
   }
+}
+
+Deployment: #Deployment & {
+  replicas: values._#env.replicas | *1
+  image:    values._#env.image
 }
