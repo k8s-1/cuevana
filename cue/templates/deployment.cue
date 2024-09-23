@@ -30,6 +30,6 @@ _#Deployment: {
 }
 
 Deployment: _#Deployment & {
-  replicas: values._#env.replicas
-  image:    values._#env.image
+  spec.replicas: values._#env.replicas
+  spec.image:    values._#env.image
 }
