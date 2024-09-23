@@ -4,3 +4,4 @@ import (
 )
 
 templates.#Deployment
+templates.#Kustomization
