@@ -4,6 +4,6 @@ import (
 )
 
 configs: [
-  templates.#Deployment
+  templates.#Deployment,
   templates.#Kustomization
 ]
