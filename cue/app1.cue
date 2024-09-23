@@ -4,8 +4,6 @@ import (
 )
 
 #Config: { path: string, value: _ },
-
-
 configs: [...#Config]
 
 configs: [
