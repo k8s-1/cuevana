@@ -4,6 +4,6 @@ import (
 )
 
 configs: [
-  templates.#Deployment,
-  templates.#Kustomization
+  { path: deploy.yaml, value: templates.#Deployment },
+  { path: kustomization.yaml, value: templates.#Kustomization },
 ]
