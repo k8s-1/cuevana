@@ -16,6 +16,7 @@
 - [ ] be able to configure an app to only
   be included in a specific environment
   e.g. metallb on baremetal clusters
+  https://cuetorials.com/first-steps/generate-configuration/
   
 - [ ] create multiple files
   from a single .cue
