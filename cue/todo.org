@@ -23,9 +23,7 @@
 - [ ] add extra config files for a certain environment,
   e.g. tools apps on tools cluster
   
-- [ ] create multiple files
-  from a single .cue
+- [ ] create multiple files from a single .cue
   
-- [ ] store these files in
-  an appropriate path
+- [ ] store these files in an appropriate path
 
