@@ -3,4 +3,5 @@ package values
 
 _#env: {
   image: "dev-v10.10.2"
+  replicas: 10
 }
