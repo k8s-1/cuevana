@@ -3,6 +3,7 @@ import (
 	"github.com/k8s-1/cuevana/templates"
 )
 
-templates.#Deployment
-
-templates.#Kustomization
+configs: [
+  templates.#Deployment
+  templates.#Kustomization
+]
