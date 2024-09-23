@@ -3,9 +3,8 @@ import (
 	"github.com/k8s-1/cuevana/templates"
 )
 
-#Config: [
-  { path: string, value: ... },
-]
+#Config: { path: string, value: _ },
+
 
 configs: [...#Config]
 
