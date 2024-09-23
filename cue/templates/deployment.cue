@@ -13,7 +13,7 @@ import (
     name: "app1"
   }
   spec: {
-    replicas: values._#env.replicas | *1
+    replicas: values._#env.replicas
     selector: matchLabels: app: "app1"
     template: {
       metadata: {
