@@ -30,6 +30,6 @@ _#Deployment: {
 }
 
 Deployment: _#Deployment & {
-  replicas: values._#env.replicas | *1
+  replicas: values._#env.replicas
   image:    values._#env.image
 }
