@@ -17,6 +17,9 @@
   be included in a specific environment
   e.g. metallb on baremetal clusters
   https://cuetorials.com/first-steps/generate-configuration/
+  -> simple: create a folder with only environment-specific .cue
+
+- [ ] add extra config files for a certain environment
   
 - [ ] create multiple files
   from a single .cue
