@@ -9,4 +9,6 @@ something: templates.nums
 
 right: templates.#Deployment
 
+templates.#Deployment
+
 test: "ok"
