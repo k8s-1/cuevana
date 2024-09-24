@@ -4,8 +4,7 @@ package gen
 
 import (
 	"tool/cli"
-	"tool/exec"
-	"tool/file"
+	"tool/exec" "tool/file"
 	"strings"
 	"path"
 )
@@ -44,7 +43,7 @@ command: gen: {
 }
 
 command: all: {
-	envs: ["dev", "tst", "prd"]
+	envs: ["dev", "prd"]
 
 	for _, e in envs {
 
