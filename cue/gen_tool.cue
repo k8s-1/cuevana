@@ -9,7 +9,7 @@ import (
   "path"
 )
 
-specific_env?: @tag(env)
+specific_env?: [@tag(env)]
 
 env: specific_env | *["dev","tst","prd"]
 
