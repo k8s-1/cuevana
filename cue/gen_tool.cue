@@ -49,14 +49,14 @@ command: all: {
 	for _, e in envs {
 
 		(e): {
-		run: exec.Run & {
-			cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
-			stdout: string
-		}
+			run: exec.Run & {
+				cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
+				stdout: string
+			}
 
-		print: cli.Print & {
-			text: run.stdout
+			print: cli.Print & {
+				text: run.stdout
+			}
 		}
-    }
 	}
 }
