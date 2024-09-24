@@ -7,7 +7,7 @@ import (
   "path"
 )
 
-//env: string | @tag(env)
+env:  string | *"dev" @tag(env)
 
 command: gen: {
 
