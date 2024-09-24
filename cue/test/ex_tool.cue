@@ -5,12 +5,6 @@ import (
     "tool/cli"
 )
 
-//command: "dump": {
-//    task: print: cli.Print & {
-//        text: yaml.MarshalStream(objects)
-//    }
-//}
-
 command: "gen": {
 	for i, R in objects {
 		// make a unique name when comprehending
