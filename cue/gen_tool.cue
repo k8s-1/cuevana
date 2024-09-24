@@ -46,7 +46,7 @@ command: gen: {
 
       if vet.success {
         print: cli.print & {
-          text: "► exporting \(f) to \(outputfile)"
+          text: "► exporting \(f) to \(outputFile)"
         }
 
         run: exec.run & {
@@ -56,11 +56,11 @@ command: gen: {
         }
       }
 
-      if !vet.success {
-        print: cli.print & {
-          text: "► skipping \(f)"
-        }
-      }
+      //if !vet.success {
+      //  print: cli.print & {
+      //    text: "► skipping \(f)"
+      //  }
+      //}
 
 		}
 	}
