@@ -5,8 +5,8 @@ import (
     "tool/cli"
 ) 
 
-command: dump: {
-    task: print: cli.Print & {
-        text: yaml.MarshalStream(objects)
-    }
+command: gen: {
+	task: print: cli.Print & {
+		text: yaml.MarshalStream(objects)
+	}
 }
