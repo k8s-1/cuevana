@@ -13,7 +13,6 @@ env:  string | string @tag(env)
 
 command: gen: {
 
-  //for _, e in env {
     find: file.Glob & {
       glob: "configs/*/*.cue"
     }
