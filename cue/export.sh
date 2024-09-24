@@ -6,8 +6,7 @@ for dir in *
 do
   pwd
   
-  echo mkdir -p "$target/$dir"
-  mkdir -p "$target/$dir"
+  mkdir -p "../manifests/dev"
 
   for file in "$dir"/*.cue
   do
