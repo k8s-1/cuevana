@@ -18,6 +18,10 @@ command: gen: {
 
 	env: string | string @tag(env)
 
+				print: cli.Print & {
+					text: "(╯°□°）╯ ┻━┻ Beginning configuration for \(env)"
+				}
+
 	find: file.Glob & {
 		glob: "configs/*/*.cue"
 	}
