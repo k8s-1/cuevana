@@ -45,4 +45,5 @@
   
 - [X] store these files in an appropriate path
   ::: add something to move the file after cue export
+  -> done via script, bash is fine (simple)
 
