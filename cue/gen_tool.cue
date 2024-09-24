@@ -54,7 +54,6 @@ command: gen: {
 			}
 
 			if !run.success {
-
 				print: cli.Print & {
 					text: "► Exporting \(f) to \(outputFile)"
 				}
