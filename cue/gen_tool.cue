@@ -1,3 +1,5 @@
+// usage: cue cmd -t env=dev gen
+
 package gen
 
 import (
