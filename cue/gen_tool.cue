@@ -46,11 +46,12 @@ command: gen: {
         mustSucceed: false
 			}
 
-			write: file.Create & {
-        $dep: run.success
-				filename: outputFile
-				contents: run.stdout
-			}
+      if run.success {
+        write: file.Create & {
+          filename: outputFile
+          contents: run.stdout
+        }
+      }
 
 		}
 	}
