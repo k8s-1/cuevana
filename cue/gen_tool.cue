@@ -3,7 +3,7 @@
 package gen
 
 import (
-  "tool/cli"
+	"tool/cli"
 	"tool/exec"
 	"tool/file"
 	"strings"
@@ -31,7 +31,7 @@ command: gen: {
 				stdout: string
 			}
 
-      print: cli.Print & {
+			print: cli.Print & {
 				text: "► Writing to configuration to \(outputFile)..."
 			}
 
@@ -48,4 +48,9 @@ command: all: {
 		cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
 		stdout: string
 	}
+
+	print: cli.Print & {
+		text: run.stdout
+	}
+
 }
