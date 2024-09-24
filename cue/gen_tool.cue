@@ -7,6 +7,8 @@ import (
   "path"
 )
 
+env: string & @tag(env)
+
 command: gen: {
 
 	find: file.Glob & {
@@ -22,7 +24,7 @@ command: gen: {
       outputFile: "../manifests/\(appDir)/\(baseName)"
 
 			run: exec.Run & {
-				cmd: ["cue", "export", "-t", "dev", "--out", "yaml", f]
+				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
 				stdout: string
 			}
 
