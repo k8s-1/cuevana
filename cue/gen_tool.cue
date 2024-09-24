@@ -6,38 +6,45 @@ import (
 	//"tool/exec"
 	"tool/file"
 	"strings"
-  "path"
+	"path"
 )
 
+env: string @tag(env,short=prod|staging)
 
-env: @tag(env) *["dev", "tst", "prd"]
-
+//env: @tag(env) *["dev", "tst", "prd"]
 
 command: gen: {
 
-  for _, e in env {
-    find: file.Glob & {
-      glob: "configs/*/*.cue"
-    }
+	//for _, e in env {
+	//
 
-    for i, f in find.files {
-      (f): {
-        appDir: path.Base(path.Dir(f))
+	print: cli.Print & {
+		text: "► Bootstrapping \(env)"
+	}
 
-        baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
+	find: file.Glob & {
+		glob: "configs/*/*.cue"
+	}
 
-        outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
+	for i, f in find.files
+	//}
+	{
+		(f): {
+			appDir: path.Base(path.Dir(f))
 
-        //run: exec.Run & {
-        //  cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-        //  stdout: string
-        //}
-        //
-        //write: file.Create & {
-        //  filename: outputFile
-        //  contents: run.stdout
-        //}
-      }
-    }
-  }
+			baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
+
+			outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
+
+			//run: exec.Run & {
+			//  cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+			//  stdout: string
+			//}
+			//
+			//write: file.Create & {
+			//  filename: outputFile
+			//  contents: run.stdout
+			//}
+		}
+	}
 }
