@@ -1,3 +1,5 @@
+package app1
+
 import (
     "encoding/yaml"
     "tool/cli"
