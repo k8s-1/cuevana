@@ -37,7 +37,3 @@ command: gen: {
     }
   }
 }
-
-
-//command: all: 
-
