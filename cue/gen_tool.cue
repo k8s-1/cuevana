@@ -26,6 +26,10 @@ command: gen: {
 
 			outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
 
+			mkdir: file.MkdirAll & {
+				path:   "\(tnDir)"
+			}
+
 			run: exec.Run & {
 				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
 				stdout: string
