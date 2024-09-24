@@ -56,11 +56,11 @@ command: gen: {
         }
       }
 
-      //if !vet.success {
-      //  print: cli.print & {
-      //    text: "► skipping \(f)"
-      //  }
-      //}
+      if !vet.success {
+        print: cli.print & {
+          text: "► skipping \(f)"
+        }
+      }
 
 		}
 	}
