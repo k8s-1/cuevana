@@ -14,9 +14,9 @@ import (
 	"path"
 )
 
-command: gen: {
+env: string | string @tag(env)
 
-	env: string | string @tag(env)
+command: gen: {
 
 	print: cli.Print & {
     text: "Configuring environment: \(env)"
