@@ -7,9 +7,9 @@ do
 
   mkdir -p ../../manifests/dev/"$dir"
   
-  for file in "$dir"/*.cue
+  for path in "$dir"/*.cue
   do
-    cue export -t dev "$file" --out yaml > "../../manifests/${file%.cue}.yaml"
+    cue export -t dev "$path" --out yaml > "../../manifests/dev/${path%.cue}.yaml"
   done
 
 done
