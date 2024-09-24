@@ -17,6 +17,10 @@ command: gen: {
 			setup: cli.Print & {
 				text: "\(f)"
 			}
+
+      
+
+
 		}
 	}
 
