@@ -2,9 +2,10 @@
 
 target="../manifests/dev"
 
-for dir in configs/*
+cd configs || exit 1
+
+for dir in *
 do
-  # echo "$dir"
   
   for file in "$dir"/*.cue
   do
