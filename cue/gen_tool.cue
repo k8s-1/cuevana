@@ -38,7 +38,7 @@ command: gen: {
 				}
 			}
 
-			if (env == "dev" && appDir == "app1") {
+			if (env != "dev" && appDir == "app1") {
 				mkdir: file.MkdirAll & {
 					path: "\(targetDir)"
 				}
