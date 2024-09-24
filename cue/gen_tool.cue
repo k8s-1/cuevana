@@ -43,11 +43,9 @@ command: gen: {
 			}
 
 			if run.success {
-        
-			print: cli.Print & {
-				text: "► Exported \(f) to \(outputFile)"
-			}
-
+        print: cli.Print & {
+          text: "► Exported \(f) to \(outputFile)"
+        }
 				write: file.Create & {
 					filename: outputFile
 					contents: run.stdout
@@ -56,7 +54,7 @@ command: gen: {
 
 			if !run.success {
 				print: cli.Print & {
-					text: "► Failed to export \(f) to \(outputFile)"
+          text: "► Failed to export \(f) to \(outputFile): \(run.stderr)"
 				}
 			}
 
