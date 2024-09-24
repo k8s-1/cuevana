@@ -2,14 +2,14 @@ package gen
 
 import (
 	"tool/cli"
-	"tool/exec"
+	//"tool/exec"
 	"tool/file"
 )
 
-command: prompter: {
+command: gen: {
 
 	find: file.Glob & {
-		glob: "configs/**/*.cue"
+		glob: "configs/*/*.cue"
 	}
 
 	for i, f in find.files {
@@ -18,9 +18,8 @@ command: prompter: {
 				if i > 0 {
 					$dep: command.bench[find.files[i-1]].print.$done
 				}
-				text: "\(f):"
+				text: "\(f)"
 			}
-
 		}
 	}
 
