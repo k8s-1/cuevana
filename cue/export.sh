@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
+mkdir -p manifests/dev
+
 cd configs || exit 1
 
 for dir in *
 do
   
-  mkdir -p "../manifests/dev"
-
   for file in "$dir"/*.cue
   do
     cue export -t dev "$file" --out yaml > "../manifests/dev/${file%.cue}.yaml"
