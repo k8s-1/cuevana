@@ -22,9 +22,11 @@ command: gen: {
 		(f): {
 			appDir: path.Base(path.Dir(f))
 
-			baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
+			filename: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
 
-			outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
+			targetDir: "../manifests/\(env)/\(appDir)"
+
+			outputFile: "\(targetDir)/\(filename)"
 
 			mkdir: file.MkdirAll & {
 				path:   "\(tnDir)"
