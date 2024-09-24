@@ -3,6 +3,7 @@
 package gen
 
 import (
+  "tool/cli"
 	"tool/exec"
 	"tool/file"
 	"strings"
@@ -28,6 +29,10 @@ command: gen: {
 			run: exec.Run & {
 				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
 				stdout: string
+			}
+
+      print: cli.Print & {
+				text: "► installing Flux on \(c.name)"
 			}
 
 			write: file.Create & {
