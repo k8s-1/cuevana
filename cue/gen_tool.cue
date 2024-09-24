@@ -29,7 +29,7 @@ command: gen: {
 			outputFile: "\(targetDir)/\(filename)"
 
 			mkdir: file.MkdirAll & {
-				path:   "\(tnDir)"
+				path:   "\(targetDir)"
 			}
 
 			run: exec.Run & {
