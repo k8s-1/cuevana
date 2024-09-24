@@ -1,4 +1,4 @@
-package app1
+package test
 
 import (
 	"github.com/k8s-1/cuevana/templates"
