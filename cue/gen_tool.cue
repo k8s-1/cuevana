@@ -26,7 +26,7 @@ command: gen: {
 			}
 		}
 
-		for i, f in find.files
+		for _, f in find.files
 		{
 			(f): {
 				appDir: path.Base(path.Dir(f))
