@@ -3,6 +3,7 @@ package gen
 import (
     //"encoding/yaml"
     "tool/cli"
+    "github.com/k8s-1/cuevana/test"
 )
 
 command: "gen": {
