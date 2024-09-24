@@ -40,7 +40,7 @@ command: gen: {
 
 command: all: {
 	run: exec.Run & {
-		cmd: ["cue", "export", "-t", "env=dev", "--out", "yaml", f]
+		cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
 		stdout: string
 	}
 }
