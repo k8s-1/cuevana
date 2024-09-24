@@ -28,14 +28,12 @@ command: gen: {
 
 			// Run the CUE export command to render the file as YAML
 			run: exec.Run & {
-				$dep: setup.$done
 				cmd: ["cue", "export", "-t", "dev", "--out", "yaml", f]
 				stdout: string
 			}
 
 			// Write the exported YAML content to a new file
-			write: file.Write & {
-				$dep: run.success   // Ensure export is successful before writing
+			write: file.Create & {
 				filename: outputFile // Save the output in the same structure with .yaml extension
 				contents: run.stdout // Use the rendered YAML from the 'cue export'
 			}
