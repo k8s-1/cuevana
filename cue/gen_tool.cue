@@ -5,12 +5,12 @@ package gen
 import (
 	//"tool/exec"
 	"tool/file"
-  "tool/cli"
+	"tool/cli"
 	"strings"
 	"path"
 )
 
-env: string @tag(env,short=prod|staging)
+env: string | *["dev"] @tag(env)
 
 //env: @tag(env) *["dev", "tst", "prd"]
 
@@ -19,8 +19,10 @@ command: gen: {
 	//for _, e in env {
 	//
 
-	print: cli.Print & {
-		text: "► Bootstrapping \(env)"
+	for _, e in env {
+		print: cli.Print & {
+			text: "► Bootstrapping \(e)"
+		}
 	}
 
 	find: file.Glob & {
