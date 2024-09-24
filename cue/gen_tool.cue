@@ -1,7 +1,6 @@
 package gen
 
 import (
-	"os"
 	"tool/cli"
 	"tool/exec"
 	"tool/file"
@@ -9,19 +8,12 @@ import (
 
 command: prompter: {
 
-	dirs: os.List & {
-		path:     "configs"
-		dirsOnly: true
+	cueFiles: os.Glob & {
+		dir:     "configs/\(dir)"
+		pattern: "*.cue"
 	}
 
-	for dir in dirs {
-		cueFiles: os.Glob & {
-			dir:     "configs/\(dir)"
-			pattern: "*.cue"
-		}
-
-		print: cli.Print & {
-			text: cueFiles
-		}
+	print: cli.Print & {
+		text: cueFiles
 	}
 }
