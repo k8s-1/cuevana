@@ -37,8 +37,8 @@ command: gen: {
 			}
 
       // not all files will evaluate successfully due to @if(tag)
-			pretest: exec.Run & {
-				cmd: ["cue", "eval", "-t", "\(env)", "--out", "yaml", f]
+			vet: exec.Run & {
+				cmd: ["cue", "vet", "-t", "\(env)", f]
 				stdout:      string
 				mustSucceed: false
 			}
