@@ -8,7 +8,7 @@ do
   
   for file in "$dir"/*.cue
   do
-    cue export -t dev "$file" --out yaml > "$target"
+    cue export -t dev "$file" --out yaml > "$target/${file%.cue}.yaml"
   done
 
 done
