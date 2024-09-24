@@ -1,4 +1,4 @@
-* Find a way to... [71%]
+* Find a way to... [100%]
 - [X] inject environment-specific
   variables
   ::: possible with -t TAG and
@@ -40,7 +40,9 @@
     val2: "anotherval"
   }
   
-- [ ] create multiple files from a single .cue
+- [X] create multiple files from a single .cue
+  ::: don't, just write a custom script that uses cue export $file
   
-- [ ] store these files in an appropriate path
+- [X] store these files in an appropriate path
+  ::: add something to move the file after cue export
 
