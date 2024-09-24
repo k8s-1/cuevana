@@ -45,7 +45,7 @@ command: gen: {
 			}
 
       if vet.success {
-        print: cli.print & {
+        print: cli.Print & {
           text: "► exporting \(f) to \(outputFile)"
         }
 
@@ -57,7 +57,7 @@ command: gen: {
       }
 
       if !vet.success {
-        print: cli.print & {
+        print: cli.Print & {
           text: "► skipping \(f)"
         }
       }
