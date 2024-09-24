@@ -3,17 +3,14 @@
 package gen
 
 import (
-	"tool/exec"
+	//"tool/exec"
 	"tool/file"
 	"strings"
   "path"
 )
 
 
-specific: string | @tag(env)
-
-
-env: specific | *["dev","tst","prd"]
+env: @tag(env) *["dev", "tst", "prd"]
 
 
 command: gen: {
