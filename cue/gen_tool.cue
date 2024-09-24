@@ -18,9 +18,9 @@ command: gen: {
 
 	env: string | string @tag(env)
 
-				print: cli.Print & {
-					text: "🔵 Configuring \(env)..."
-				}
+	print: cli.Print & {
+    text: "Configuring environment: \(env)"
+	}
 
 	find: file.Glob & {
 		glob: "configs/*/*.cue"
