@@ -36,6 +36,7 @@ command: gen: {
 				path: "\(targetDir)"
 			}
 
+      // not all files will evaluate successfully due to @if(tag)
 			eval: exec.Run & {
 				cmd: ["cue", "eval", "-t", "\(env)", "--out", "yaml", f]
 				stdout:      string
