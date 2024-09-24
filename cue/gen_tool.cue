@@ -9,7 +9,7 @@ import (
 command: prompter: {
 
 	cueFiles: os.Glob & {
-		dir:     "configs/\(dir)"
+		dir:     "configs/**/*"
 		pattern: "*.cue"
 	}
 
