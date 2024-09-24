@@ -50,7 +50,7 @@ command: gen: {
         run: exec.Run & {
           cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
           stdout:      string
-          mustSucceed: false
+          mustSucceed: true
         }
       }
 
