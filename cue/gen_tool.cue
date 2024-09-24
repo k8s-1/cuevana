@@ -4,7 +4,8 @@ package gen
 
 import (
 	"tool/cli"
-	"tool/exec" "tool/file"
+	"tool/exec"
+	"tool/file"
 	"strings"
 	"path"
 )
