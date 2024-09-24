@@ -14,10 +14,13 @@ command: prompter: {
 
 	for i, f in find.files {
 		(f): {
-			print: cli.Print & {
-				$dep: run.success
-				text: "\t" + strings.TrimSpace(run.stdout)
+			setup: cli.Print & {
+				if i > 0 {
+					$dep: command.bench[find.files[i-1]].print.$done
+				}
+				text: "\(f):"
 			}
+
 		}
 	}
 
