@@ -3,7 +3,7 @@
 package gen
 
 import (
-  "tool/exec"
+	"tool/exec"
 	"tool/file"
 	"strings"
 	"path"
