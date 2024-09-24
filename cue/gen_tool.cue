@@ -32,13 +32,6 @@ command: gen: {
 
 			outputFile: "\(targetDir)/\(filename)"
 
-			if (env == "dev" && appDir == "app1") {
-				cli.Print & {
-					text: "Skipping generation for \(appDir) in \(env)"
-				}
-			}
-
-			if (appDir != "app1") {
 				mkdir: file.MkdirAll & {
 					path: "\(targetDir)"
 				}
@@ -56,8 +49,6 @@ command: gen: {
 					filename: outputFile
 					contents: run.stdout
 				}
-
-			}
 
 		}
 	}
