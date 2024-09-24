@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir -p manifests/dev
+mkdir -p ../manifests/dev
 
 cd configs || exit 1
 
@@ -9,7 +9,7 @@ do
   
   for file in "$dir"/*.cue
   do
-    cue export -t dev "$file" --out yaml > "../manifests/dev/${file%.cue}.yaml"
+    cue export -t dev "$file" --out yaml > "../../manifests/dev/${file%.cue}.yaml"
   done
 
 done
