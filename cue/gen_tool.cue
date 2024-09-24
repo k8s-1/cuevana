@@ -12,7 +12,7 @@ import (
 
 command: gen: {
 
-  env: string | string @tag(env)
+	env: string | string @tag(env)
 
 	find: file.Glob & {
 		glob: "configs/*/*.cue"
@@ -44,12 +44,19 @@ command: gen: {
 }
 
 command: all: {
-	run: exec.Run & {
-		cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
-		stdout: string
-	}
+	envs: ["dev", "tst", "prd"]
 
-	print: cli.Print & {
-		text: run.stdout
+	for _, e in envs {
+
+		(e): {
+		run: exec.Run & {
+			cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
+			stdout: string
+		}
+
+		print: cli.Print & {
+			text: run.stdout
+		}
+    }
 	}
 }
