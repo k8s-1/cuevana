@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-mkdir -p ../manifests/dev
-
 cd configs || exit 1
 
 for dir in *
 do
+
+  mkdir -p ../../manifests/dev/"$dir"
   
   for file in "$dir"/*.cue
   do
