@@ -7,7 +7,7 @@ import (
 //_#Config: { path: string, value: _ },
 //configs: [..._#Config]
 
-configs: [
+files: [
   { path: "deploy.yaml", value: templates.#Deployment },
   { path: "kustomization.yaml", value: templates.#Kustomization },
 ]
