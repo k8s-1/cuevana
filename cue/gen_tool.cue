@@ -10,7 +10,7 @@ import (
 )
 
 
-specific?: [@tag(env)]
+specific?: @tag(env)
 
 
 env: specific | *["dev","tst","prd"]
@@ -31,15 +31,15 @@ command: gen: {
 
         outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
 
-        run: exec.Run & {
-          cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-          stdout: string
-        }
-
-        write: file.Create & {
-          filename: outputFile
-          contents: run.stdout
-        }
+        //run: exec.Run & {
+        //  cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+        //  stdout: string
+        //}
+        //
+        //write: file.Create & {
+        //  filename: outputFile
+        //  contents: run.stdout
+        //}
       }
     }
   }
