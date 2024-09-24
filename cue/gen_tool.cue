@@ -36,31 +36,31 @@ command: gen: {
 				path: "\(targetDir)"
 			}
 
-      // not all files will vet successfully due to @if(tag)
-      // this is desired to constrain apps to specific environments
+			// not all files will vet successfully due to @if(tag)
+			// this is desired to constrain apps to specific environments
 			vet: exec.Run & {
 				cmd: ["cue", "vet", "-t", "\(env)", f]
 				stdout:      string
 				mustSucceed: false
 			}
 
-      if vet.success {
-        print: cli.Print & {
-          text: "► exporting \(f) to \(outputFile)"
-        }
+			if vet.success {
+				print: cli.Print & {
+					text: "► exporting \(f) to \(outputFile)"
+				}
 
-        run: exec.Run & {
-          cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-          stdout:      string
-          mustsucceed: true
-        }
-      }
+				run: exec.Run & {
+					cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+					stdout:      string
+					mustsucceed: true
+				}
+			}
 
-      if !vet.success {
-        print: cli.Print & {
-          text: "► skipping \(f)"
-        }
-      }
+			if !vet.success {
+				print: cli.Print & {
+					text: "► skipping \(f)"
+				}
+			}
 
 		}
 	}
