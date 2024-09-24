@@ -44,7 +44,7 @@ command: gen: {
 
 			if run.success {
         print: cli.Print & {
-          text: "► Exported \(f) to \(outputFile)"
+          text: "► Exporting \(f) to \(outputFile)"
         }
 				write: file.Create & {
 					filename: outputFile
