@@ -36,7 +36,7 @@ command: gen: {
 				path: "\(targetDir)"
 			}
 
-      // not all files will evaluate successfully due to @if(tag)
+      // not all files will vet successfully due to @if(tag)
 			vet: exec.Run & {
 				cmd: ["cue", "vet", "-t", "\(env)", f]
 				stdout:      string
