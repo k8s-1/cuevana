@@ -4,7 +4,6 @@ cd configs || exit 1
 
 for dir in *
 do
-  pwd
   
   mkdir -p "../manifests/dev"
 
