@@ -10,9 +10,8 @@ import (
 	//"path"
 )
 
-
-e: string | string @tag(env)
-//env: [x] | *["dev", "tst", "prd"]
+x: string | string @tag(env)
+env: [x] | *["dev", "tst", "prd"]
 
 //env: @tag(env) 
 
@@ -21,11 +20,13 @@ command: gen: {
 	//for _, e in env {
 	//
 
-	//for _, e in env {
+	for _, e in env {
+  (e): {
 		print: cli.Print & {
 			text: "► Bootstrapping \(e)"
-		}
-	//}
+      }
+    }
+	}
 
 	//find: file.Glob & {
 	//	glob: "configs/*/*.cue"
