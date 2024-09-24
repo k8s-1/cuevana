@@ -5,34 +5,34 @@ package gen
 import (
 	"tool/file"
 	"strings"
-  "path"
+	"path"
 )
 
-env:  string | string @tag(env)
+env: string | string @tag(env)
 
 command: gen: {
 
-    find: file.Glob & {
-      glob: "configs/*/*.cue"
-    }
+	find: file.Glob & {
+		glob: "configs/*/*.cue"
+	}
 
-    for i, f in find.files {
-      (f): {
-        appDir: path.Base(path.Dir(f))
+	for i, f in find.files {
+		(f): {
+			appDir: path.Base(path.Dir(f))
 
-        baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
+			baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
 
-        outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
+			outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
 
-        run: exec.Run & {
-          cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-          stdout: string
-        }
+			run: exec.Run & {
+				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+				stdout: string
+			}
 
-        write: file.Create & {
-          filename: outputFile
-          contents: run.stdout
-        }
-      }
-    }
-  }
+			write: file.Create & {
+				filename: outputFile
+				contents: run.stdout
+			}
+		}
+	}
+}
