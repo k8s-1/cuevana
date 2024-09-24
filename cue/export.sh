@@ -6,6 +6,8 @@ cd configs || exit 1
 
 for dir in *
 do
+  
+  mkdir -p "$target"
 
   for file in "$dir"/*.cue
   do
