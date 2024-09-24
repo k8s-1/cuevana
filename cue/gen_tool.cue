@@ -36,10 +36,6 @@ command: gen: {
 				path: "\(targetDir)"
 			}
 
-			print: cli.Print & {
-				text: "► Exporting \(f) to \(outputFile)"
-			}
-
 			run: exec.Run & {
 				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
 				stdout:      string
@@ -47,6 +43,11 @@ command: gen: {
 			}
 
 			if run.success {
+        
+			print: cli.Print & {
+				text: "► Exported \(f) to \(outputFile)"
+			}
+
 				write: file.Create & {
 					filename: outputFile
 					contents: run.stdout
