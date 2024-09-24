@@ -45,14 +45,20 @@ command: gen: {
 			}
 
       if vet.success {
-        print: cli.Print & {
-          text: "► Exporting \(f) to \(outputFile)"
+        print: cli.print & {
+          text: "► exporting \(f) to \(outputfile)"
         }
 
-        run: exec.Run & {
+        run: exec.run & {
           cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
           stdout:      string
-          mustSucceed: true
+          mustsucceed: true
+        }
+      }
+
+      if !vet.success {
+        print: cli.print & {
+          text: "► skipping \(f)"
         }
       }
 
