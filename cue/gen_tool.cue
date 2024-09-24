@@ -23,10 +23,10 @@ command: gen: {
 
       baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
 
-      outputFile: "../manifests/\(appDir)/\(baseName)"
+      outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
 
 			run: exec.Run & {
-				cmd: ["cue", "export", "-t", "dev", "--out", "yaml", f]
+				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
 				stdout: string
 			}
 
