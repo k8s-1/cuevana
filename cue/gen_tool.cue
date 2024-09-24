@@ -1,7 +1,6 @@
 package gen
 
 import (
-	"tool/cli"
 	"tool/exec"
 	"tool/file"
 	"strings"
