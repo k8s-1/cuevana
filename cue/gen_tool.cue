@@ -49,7 +49,7 @@ command: gen: {
           text: "► exporting \(f) to \(outputFile)"
         }
 
-        run: exec.run & {
+        run: exec.Run & {
           cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
           stdout:      string
           mustsucceed: true
