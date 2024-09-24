@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 
-target="../manifests/dev"
-
 cd configs || exit 1
 
 for dir in *
 do
+  pwd
   
   echo mkdir -p "$target/$dir"
   mkdir -p "$target/$dir"
 
   for file in "$dir"/*.cue
   do
-    cue export -t dev "$file" --out yaml > "$target/$dir/${file%.cue}.yaml"
+    cue export -t dev "$file" --out yaml > "../manifests/dev/${file%.cue}.yaml"
   done
 
 done
