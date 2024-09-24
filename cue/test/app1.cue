@@ -8,8 +8,8 @@ import (
 //configs: [..._#Config]
 
 objects: [
-  { path: "deploy.yaml", value: templates.#Deployment },
-  { path: "kustomization.yaml", value: templates.#Kustomization },
+  { filename: "deploy.yaml", contents: templates.#Deployment },
+  { filename: "kustomization.yaml", contents: templates.#Kustomization },
 ]
 
 //[
