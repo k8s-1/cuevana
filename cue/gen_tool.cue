@@ -2,7 +2,7 @@ package gen
 
 import (
 	"tool/cli"
-	//"tool/exec"
+	"tool/exec"
 	"tool/file"
 )
 
@@ -18,7 +18,16 @@ command: gen: {
 				text: "\(f)"
 			}
 
+			run: exec.Run & {
+				$dep: setup.$done
+				cmd: ["cue", "export", "-t", "dev", "--out", "cue", f]
+				stdout: string
+			}
+      
+			getit: cli.Print & {
+				text: run.stdout
+			}
+
 		}
 	}
-
 }
