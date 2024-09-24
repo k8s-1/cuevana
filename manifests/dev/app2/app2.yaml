@@ -6,7 +6,7 @@ objects:
       metadata:
         name: my-app
       spec:
-        replicas: 10
+        replicas: 1
         containers:
           - image: dev-v10.10.2
             name: my-app
