@@ -5,6 +5,7 @@ import (
 	"tool/exec"
 	"tool/file"
 	"strings"
+  "path"
 )
 
 command: gen: {
