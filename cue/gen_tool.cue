@@ -1,5 +1,8 @@
 // usage: cue cmd -t env=dev gen
 
+// repeat runs will result in the same outcome
+// note: command performs non-idempotent i/o on every run
+
 package gen
 
 import (
