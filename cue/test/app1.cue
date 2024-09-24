@@ -2,7 +2,6 @@ package app1
 
 import (
 	"github.com/k8s-1/cuevana/templates"
-	"github.com/k8s-1/cuevana/test"
 )
 
 //_#Config: { path: string, value: _ },
