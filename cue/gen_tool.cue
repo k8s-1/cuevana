@@ -47,7 +47,6 @@ command: gen: {
 			}
 
 			if run.success {
-
 				write: file.Create & {
 					filename: outputFile
 					contents: run.stdout
