@@ -37,6 +37,8 @@ command: gen: {
 			}
 
       // not all files will vet successfully due to @if(tag)
+      // this is desired to constrain apps to specific
+      // environments
 			vet: exec.Run & {
 				cmd: ["cue", "vet", "-t", "\(env)", f]
 				stdout:      string
