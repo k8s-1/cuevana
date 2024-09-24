@@ -21,7 +21,7 @@ command: prompter: {
 		}
 
 		print: cli.Print & {
-			text: echo.stdout
+			text: cueFiles
 		}
 	}
 }
