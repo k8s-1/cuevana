@@ -9,7 +9,7 @@ do
   
   for file in "$dir"/*.cue
   do
-    cue export -t dev "$file" --out yaml > "../../manifests/dev/${file%.cue}.yaml"
+    cue export -t dev "$file" --out yaml > "../../manifests/${file%.cue}.yaml"
   done
 
 done
