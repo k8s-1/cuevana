@@ -52,5 +52,4 @@ command: all: {
 	print: cli.Print & {
 		text: run.stdout
 	}
-
 }
