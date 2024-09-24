@@ -32,7 +32,7 @@ command: gen: {
 			}
 
       print: cli.Print & {
-				text: "► installing Flux on \(c.name)"
+				text: "► Writing to configuration to \(outputFile)..."
 			}
 
 			write: file.Create & {
