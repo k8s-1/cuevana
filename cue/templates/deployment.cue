@@ -11,7 +11,7 @@ import (
         name: "my-app"
     }
     spec: {
-        replicas: values.env.replicas
+        replicas: values.env.replicas | *1
         containers: [{
             image: values.env.image
             name:  "my-app"
