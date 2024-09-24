@@ -6,13 +6,13 @@ import (
 
 //_#Config: { path: string, value: _ },
 //configs: [..._#Config]
-//
-//configs: [
-//  { path: "deploy.yaml", value: templates.#Deployment },
-//  { path: "kustomization.yaml", value: templates.#Kustomization },
-//]
 
-[
-  templates.#Deployment,
-  templates.#Kustomization
+configs: [
+  { path: "deploy.yaml", value: templates.#Deployment },
+  { path: "kustomization.yaml", value: templates.#Kustomization },
 ]
+
+//[
+//  templates.#Deployment,
+//  templates.#Kustomization
+//]
