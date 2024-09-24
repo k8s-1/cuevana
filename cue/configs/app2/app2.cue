@@ -1,3 +1,5 @@
+@if(cheese)
+
 package app2
 
 import (
