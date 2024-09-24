@@ -50,7 +50,7 @@ command: all: {
 
 		(e): {
 			run: exec.Run & {
-				cmd: ["cue", "cmd", "-t", "env=dev", "gen"]
+				cmd: ["cue", "cmd", "-t", "env=\(e)", "gen"]
 				stdout: string
 			}
 
