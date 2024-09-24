@@ -19,7 +19,7 @@ command: gen: {
 	env: string | string @tag(env)
 
 	print: cli.Print & {
-    text: "Configuring environment: \(env)"
+    text: "\nConfiguring environment: \(env)"
 	}
 
 	find: file.Glob & {
