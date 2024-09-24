@@ -17,10 +17,6 @@ command: gen: {
 		(f): {
 			outputFile: strings.Replace(f, ".cue", ".yaml", 1)
 
-			setup: cli.Print & {
-				text: "\(f)"
-			}
-
 			run: exec.Run & {
 				cmd: ["cue", "export", "-t", "dev", "--out", "yaml", f]
 				stdout: string
