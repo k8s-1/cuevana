@@ -42,7 +42,7 @@ command: gen: {
 			}
 
 			print: cli.Print & {
-				text: "► Writing to configuration to \(outputFile)..."
+				text: "✅ Writing to configuration to \(outputFile)..."
 			}
 
 			write: file.Create & {
