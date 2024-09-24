@@ -47,6 +47,7 @@ command: gen: {
 			}
 
 			write: file.Create & {
+        $dep: run.success
 				filename: outputFile
 				contents: run.stdout
 			}
