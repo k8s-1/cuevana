@@ -20,33 +20,33 @@ command: gen: {
 	}
 
 	for _, e in env {
-  (e): {
-		print: cli.Print & {
-			text: "► Bootstrapping \(e)"
-      }
-    }
-
-    	for i, f in find.files
-	//}
-	{
-		(f): {
-			appDir: path.Base(path.Dir(f))
-
-			baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
-
-			outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
-
-			run: exec.Run & {
-			  cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-			  stdout: string
-			}
-
-			write: file.Create & {
-			  filename: outputFile
-			  contents: run.stdout
+		(e): {
+			print: cli.Print & {
+				text: "► Bootstrapping \(e)"
 			}
 		}
-	}
+
+		for i, f in find.files
+		//}
+		{
+			(f): {
+				appDir: path.Base(path.Dir(f))
+
+				baseName: strings.Replace(path.Base(f), ".cue", ".yaml", 1)
+
+				outputFile: "../manifests/\(env)/\(appDir)/\(baseName)"
+
+				run: exec.Run & {
+					cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+					stdout: string
+				}
+
+				write: file.Create & {
+					filename: outputFile
+					contents: run.stdout
+				}
+			}
+		}
 
 	}
 
