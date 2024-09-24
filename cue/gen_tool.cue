@@ -36,13 +36,13 @@ command: gen: {
 				path:   "\(targetDir)"
 			}
 
+			print: cli.Print & {
+				text: "► Exporting \(f) to \(outputFile)"
+			}
+
 			run: exec.Run & {
 				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
 				stdout: string
-			}
-
-			print: cli.Print & {
-				text: "► Writing configuration to \(outputFile)..."
 			}
 
 			write: file.Create & {
