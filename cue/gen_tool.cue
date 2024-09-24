@@ -42,16 +42,23 @@ command: gen: {
 
 			run: exec.Run & {
 				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-				stdout: string
-        mustSucceed: false
+				stdout:      string
+				mustSucceed: false
 			}
 
-      if run.success {
-        write: file.Create & {
-          filename: outputFile
-          contents: run.stdout
-        }
-      }
+			if run.success {
+				write: file.Create & {
+					filename: outputFile
+					contents: run.stdout
+				}
+			}
+
+			if !run.success {
+
+				print: cli.Print & {
+					text: "► Exporting \(f) to \(outputFile)"
+				}
+			}
 
 		}
 	}
