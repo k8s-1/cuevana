@@ -10,7 +10,7 @@ import (
 )
 
 
-specific?: @tag(env)
+specific: @tag(env)
 
 
 env: specific | *["dev","tst","prd"]
