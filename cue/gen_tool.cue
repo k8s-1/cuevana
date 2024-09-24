@@ -10,9 +10,9 @@ import (
 	"path"
 )
 
-env: string | string @tag(env)
-
 command: gen: {
+
+  env: string | string @tag(env)
 
 	find: file.Glob & {
 		glob: "configs/*/*.cue"
