@@ -36,28 +36,23 @@ command: gen: {
 				path: "\(targetDir)"
 			}
 
-			print: cli.Print & {
-				text: "► Exporting \(f) to \(outputFile)"
-			}
-
-			run: exec.Run & {
-				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+			eval: exec.Run & {
+				cmd: ["cue", "eval", "-t", "\(env)", "--out", "yaml", f]
 				stdout:      string
 				mustSucceed: false
 			}
 
-			if run.success {
-				write: file.Create & {
-					filename: outputFile
-					contents: run.stdout
-				}
-			}
+      if eval.success {
+        print: cli.Print & {
+          text: "► Exporting \(f) to \(outputFile)"
+        }
 
-			if !run.success {
-				print: cli.Print & {
-					text: "► Failed to export \(f) to \(outputFile): \(run.stderr)"
-				}
-			}
+        run: exec.Run & {
+          cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+          stdout:      string
+          mustSucceed: false
+        }
+      }
 
 		}
 	}
