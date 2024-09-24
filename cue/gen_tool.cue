@@ -1,4 +1,4 @@
-// usage is idempotent: cue cmd -t env=dev gen
+// usage: cue cmd -t env=dev gen
 
 package gen
 
