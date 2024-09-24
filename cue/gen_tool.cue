@@ -1,4 +1,5 @@
 // usage: cue cmd -t env=dev gen
+// idempotent
 
 package gen
 
