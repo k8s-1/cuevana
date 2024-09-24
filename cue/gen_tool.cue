@@ -32,23 +32,33 @@ command: gen: {
 
 			outputFile: "\(targetDir)/\(filename)"
 
-			mkdir: file.MkdirAll & {
-				path:   "\(targetDir)"
+			if (env == "dev" && appDir == "app1") {
+				cli.Print & {
+					text: "Skipping generation for \(appDir) in \(env)"
+				}
 			}
 
-			print: cli.Print & {
-				text: "► Exporting \(f) to \(outputFile)"
+			if (env == "dev" && appDir == "app1") {
+				mkdir: file.MkdirAll & {
+					path: "\(targetDir)"
+				}
+
+				print: cli.Print & {
+					text: "► Exporting \(f) to \(outputFile)"
+				}
+
+				run: exec.Run & {
+					cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
+					stdout: string
+				}
+
+				write: file.Create & {
+					filename: outputFile
+					contents: run.stdout
+				}
+
 			}
 
-			run: exec.Run & {
-				cmd: ["cue", "export", "-t", "\(env)", "--out", "yaml", f]
-				stdout: string
-			}
-
-			write: file.Create & {
-				filename: outputFile
-				contents: run.stdout
-			}
 		}
 	}
 }
