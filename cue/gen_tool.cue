@@ -44,7 +44,7 @@ command: gen: {
 				mustSucceed: false
 			}
 
-      if eval.success {
+      if vet.success {
         print: cli.Print & {
           text: "► Exporting \(f) to \(outputFile)"
         }
