@@ -1,4 +1,4 @@
-* Find a way to... [50%]
+* Find a way to... [71%]
 - [X] inject environment-specific
   variables
   ::: possible with -t TAG and
@@ -13,15 +13,32 @@
   package to handle this config dynamically
   ::: solved by above
   
-- [ ] be able to configure an app to only
+- [X] be able to configure an app to only
   be included in a specific environment
   e.g. metallb on baremetal clusters
   https://cuetorials.com/first-steps/generate-configuration/
   -> simple: create a folder with only environment-specific .cue
   -> is it possible to regex compare the tag? e.g. env=baremetal-dev-cluster
-
-- [ ] add extra config files for a certain environment,
+  ::: use a bash/>>python<<
+  if-else clause to add it or skip it as you loop through .cue files
+  ::: use a @if(tag) on it and try-catch the error that no build
+  was found (option 1 is probably more compact), but this may be
+  simpler, just @if(tag1|tag2|tag2) etc... ---> or just
+  create a vsphere tag! (you also need this for the NFS server values
+  
+- [X] add extra config files for a certain environment,
   e.g. tools apps on tools cluster
+  ::: use a conditional marked by tag
+  // cue eval -t env=dev
+  env: string @tag(env)
+
+  if env == "dev" { // hardcoding
+    val: "someval"
+  }
+
+  if env =~ "^p.*$" { // using regex
+    val2: "anotherval"
+  }
   
 - [ ] create multiple files from a single .cue
   
