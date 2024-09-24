@@ -32,7 +32,7 @@ command: gen: {
 
 			outputFile: "\(targetDir)/\(filename)"
 
-			if (env == "dev" && appDir == "app1") {
+			if (env != "dev" && appDir == "app1") {
 				cli.Print & {
 					text: "Skipping generation for \(appDir) in \(env)"
 				}
