@@ -10,10 +10,10 @@ import (
 )
 
 
-specific_env?: [@tag(env)]
+specific?: [@tag(env)]
 
 
-env: specific_env | *["dev","tst","prd"]
+env: specific | *["dev","tst","prd"]
 
 
 command: gen: {
