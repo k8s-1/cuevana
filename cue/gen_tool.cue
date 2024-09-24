@@ -19,7 +19,7 @@ command: gen: {
 		(f): {
 			// Extract the directory and filename
 			// Remove '.cue' and replace it with '.yaml'
-			outputFile: strings.Replace(f, ".cue", ".yaml", -1)
+			outputFile: strings.Replace(f, ".cue", ".yaml")
 
 			// Print which file is being processed (optional)
 			setup: cli.Print & {
