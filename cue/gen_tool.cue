@@ -14,12 +14,14 @@ command: prompter: {
 		dirsOnly: true
 	}
 
-	cueFiles: os.Glob & {
-		dir:     "configs/\(dir)"
-		pattern: "*.cue"
-	}
+	for dir in dirs {
+		cueFiles: os.Glob & {
+			dir:     "configs/\(dir)"
+			pattern: "*.cue"
+		}
 
-	print: cli.Print & {
-		text: echo.stdout
+		print: cli.Print & {
+			text: echo.stdout
+		}
 	}
 }
