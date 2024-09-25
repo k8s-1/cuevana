@@ -2,9 +2,7 @@ import (
 	"github.com/k8s-1/cuevana/templates"
 )
 
-
 templates.job: {
 	nginx: replicas:  2
-	manager: command: "monit -I"
+	manager: command: "monit -i"
 }
-
