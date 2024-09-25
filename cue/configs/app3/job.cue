@@ -2,12 +2,9 @@ import (
 	"github.com/k8s-1/cuevana/templates"
 )
 
-nginx: templates.job & {
-	name:     "nginx"
-	replicas: 2
+
+templates.job: {
+	nginx: replicas:  2
+	manager: command: "monit -I"
 }
 
-postgres: templates.job & {
-	name:     "postgres"
-	replicas: 5
-}
