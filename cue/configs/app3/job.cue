@@ -1,12 +1,8 @@
 import (
 	"github.com/k8s-1/cuevana/templates"
 )
-ok: {
-  templates.#Job: {
-    test: {}
-  }
+ok: templates.#Job & {
+  name:     "123" // Name is an alias.
+	command:  "echo \(Name)"
+	replicas: 3
 }
-
-//templates.#Job["test"]: {
-//    replicas: 1
-//}
