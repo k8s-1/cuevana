@@ -29,7 +29,6 @@ command: gen: {
 		}
 
 		if app == _|_ {
-
 			glob: "configs/*/*.cue"
 		}
 	}
