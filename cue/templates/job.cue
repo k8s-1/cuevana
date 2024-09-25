@@ -1,8 +1,7 @@
 package templates
 
 #Job: {
-	nginx: replicas:  2
-	manager: command: "monit -i"
+  test: {}
 }
 
 #Job: [Name=_]: {
@@ -10,5 +9,3 @@ package templates
 	command:  string | *"exec \(Name)"
 	replicas: uint | *1
 }
-
-#Testjob: "123"
