@@ -1,4 +1,4 @@
-package deploy
+package templates
 
 deployment: [ID=_]: {
 	apiVersion: "apps/v1"
