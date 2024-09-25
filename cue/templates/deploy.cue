@@ -23,3 +23,5 @@ deployment: [ID=_]: {
 		}
 	}
 }
+
+deployment: "mydeploy": {}
