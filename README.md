@@ -5,3 +5,8 @@ https://github.com/tmm1/taxes.cue
 https://github.com/hofstadter-io/ghacue
 https://github.com/fluxcd/cues
 https://github.com/akselleirv/multi-cluster-deploments
+
+# install
+```
+go install cuelang.org/go/cmd/cue@latest
+```
