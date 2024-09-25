@@ -13,18 +13,14 @@ deployment: [ID=_]: {
 	spec: {
 		replicas: 1
 		selector: matchLabels: "app.kubernetes.io/name": ID
-		strategy: {}
 		template: {
 			metadata: {
-				creationTimestamp: null
-				labels: app: "myapp"
+				labels: app: ID
 			}
 			spec: containers: [{
 				image: "nginx"
 				name:  "nginx"
-				resources: {}
 			}]
 		}
 	}
-	status: {}
 }
