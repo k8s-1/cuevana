@@ -9,4 +9,7 @@ https://github.com/akselleirv/multi-cluster-deploments
 # install
 ```
 go install cuelang.org/go/cmd/cue@latest
+
+# install specific version
+go install cuelang.org/go/cmd/cue@v0.10.0
 ```
