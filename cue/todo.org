@@ -1,0 +1,49 @@
+* Find a way to... [100%]
+- [X] inject environment-specific
+  variables
+  ::: possible with -t TAG and
+  @if(TAG) in .cue file
+  
+- [X] template a configuration
+  ::: possible with having a #Definition and union (&) with
+  regularly defined values inside other package e.g. values
+  package -> see ./templates/deployment.cue
+  
+- [X] use values from an env-specific
+  package to handle this config dynamically
+  ::: solved by above
+  
+- [X] be able to configure an app to only
+  be included in a specific environment
+  e.g. metallb on baremetal clusters
+  https://cuetorials.com/first-steps/generate-configuration/
+  -> simple: create a folder with only environment-specific .cue
+  -> is it possible to regex compare the tag? e.g. env=baremetal-dev-cluster
+  ::: use a bash/>>python<<
+  if-else clause to add it or skip it as you loop through .cue files
+  ::: use a @if(tag) on it and try-catch the error that no build
+  was found (option 1 is probably more compact), but this may be
+  simpler, just @if(tag1|tag2|tag2) etc... ---> or just
+  create a vsphere tag! (you also need this for the NFS server values
+  
+- [X] add extra config files for a certain environment,
+  e.g. tools apps on tools cluster
+  ::: use a conditional marked by tag
+  // cue eval -t env=dev
+  env: string @tag(env)
+
+  if env == "dev" { // hardcoding
+    val: "someval"
+  }
+
+  if env =~ "^p.*$" { // using regex
+    val2: "anotherval"
+  }
+  
+- [X] create multiple files from a single .cue
+  ::: don't, just write a custom script that uses cue export $file
+  
+- [X] store these files in an appropriate path
+  ::: add something to move the file after cue export
+  -> done via script, bash is fine (simple)
+
