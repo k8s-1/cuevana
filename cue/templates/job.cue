@@ -1,9 +1,9 @@
 package templates
 
-//job: {
-//	nginx: replicas:  2
-//	manager: command: "monit -i"
-//}
+job: {
+	nginx: replicas:  2
+	manager: command: "monit -i"
+}
 
 job: [Name=_]: {
 	name:     Name // Name is an alias.
