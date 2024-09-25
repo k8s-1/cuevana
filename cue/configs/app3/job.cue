@@ -1,9 +1,12 @@
 import (
 	"github.com/k8s-1/cuevana/templates"
 )
-
-templates.#Job: {
-  test: {}
+ok: {
+  templates.#Job: {
+    test: {}
+  }
 }
 
-templates.#Testjob
+//templates.#Job["test"]: {
+//    replicas: 1
+//}
