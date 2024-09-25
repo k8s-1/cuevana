@@ -17,13 +17,21 @@ import (
 command: gen: {
 
 	env: string | string @tag(env)
+	app: string | string @tag(app)
 
 	print: cli.Print & {
-    text: "\nConfiguring environment: \(env)"
+		text: "\nConfiguring environment: \(env)"
 	}
 
 	find: file.Glob & {
-		glob: "configs/*/*.cue"
+		if app != _|_ {
+			glob: "configs/\(app)/cue"
+		}
+
+		if app == _|_ {
+
+			glob: "configs/*/*.cue"
+		}
 	}
 
 	for _, f in find.files {
