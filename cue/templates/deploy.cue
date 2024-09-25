@@ -1,6 +1,6 @@
 package templates
 
-deployment: [ID=_]: {
+#Deployment: [ID=_]: {
 	apiVersion: "apps/v1"
 	kind:       "Deployment"
 	metadata: {
@@ -24,4 +24,4 @@ deployment: [ID=_]: {
 	}
 }
 
-deployment: "mydeploy123": {}
+#Deployment: "mydeploy123": {}
