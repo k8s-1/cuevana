@@ -1,5 +1,6 @@
 // usage 1 - generate config for one environment: cue cmd -t env=dev gen
 // usage 2 - generate config for all environments: cue cmd all
+// usage 3 - generate config for a single app and environment: cue cmd -t env=dev -t app=app1 gen
 
 // repeat runs will result in the same outcome
 // note: command performs non-idempotent i/o on every run
