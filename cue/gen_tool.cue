@@ -25,7 +25,7 @@ command: gen: {
 
 	find: file.Glob & {
 		if app != _|_ {
-			glob: "configs/\(app)/cue"
+			glob: "configs/\(app)/*.cue"
 		}
 
 		if app == _|_ {
