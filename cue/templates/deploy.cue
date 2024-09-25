@@ -5,12 +5,14 @@ deployment: [ID=_]: {
 	kind:       "Deployment"
 	metadata: {
 		creationTimestamp: null
-		labels: app: "myapp"
-		name: "myapp"
+		labels: {
+			"app.kubernetes.io/name": ID
+		}
+		name: ID
 	}
 	spec: {
 		replicas: 1
-		selector: matchLabels: app: "myapp"
+		selector: matchLabels: "app.kubernetes.io/name": ID
 		strategy: {}
 		template: {
 			metadata: {
