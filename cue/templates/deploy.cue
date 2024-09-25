@@ -4,7 +4,6 @@ deployment: [ID=_]: {
 	apiVersion: "apps/v1"
 	kind:       "Deployment"
 	metadata: {
-		creationTimestamp: null
 		labels: {
 			"app.kubernetes.io/name": ID
 		}
